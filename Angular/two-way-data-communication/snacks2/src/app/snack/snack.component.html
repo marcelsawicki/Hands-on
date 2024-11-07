@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
     <a class="navbar-brand">{{pageTitle}}</a>
   </nav>
-  <app-filter />
+  <app-filter [(filterCriteria)]='listFilter' />
   <div class="container">
     <app-snack-list [listCriteria]='listFilter'/>
   </div>

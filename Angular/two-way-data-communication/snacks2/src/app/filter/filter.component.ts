@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './filter.component.css'
 })
 export class FilterComponent {
-  listFilter = '';
+
+  filter = model.required({
+    alias: 'filterCriteria'
+  });
 }
