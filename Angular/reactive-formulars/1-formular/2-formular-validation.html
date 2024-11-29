@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Walidacja w HTML</title>
+    </head>
+    <body>
+        <form>
+            <input id="phone" name="phone" type="text" required pattern="[0-9]{10}" />
+            <br />
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+            document.getElementById('phone').addEventListener('invalid', function() {
+                switch (true) {
+                    case this.validity.valueMissing:
+                        this.setCustomValidity('Pole nie moze byc puste');
+                        break;
+                    case this.validity.patternMismatch:
+                        this.setCustomValidity('Bledny format numeru');
+                        break;
+
+                }
+            });
+
+            document
+                .getElementById('phone')
+                .addEventListener('input', function(event){
+                    this.setCustomValidity('');
+                })
+
+        </script>
+    </body>
+</html>
